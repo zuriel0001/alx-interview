@@ -45,6 +45,8 @@ The functionality of canUnlockAll can also be demonstrated using
 a separate Python script, for example, main_0.py:
 
 ```
+$ cat main_0.py
+
 #!/usr/bin/python3
 
 canUnlockAll = __import__('0-lockboxes').canUnlockAll
