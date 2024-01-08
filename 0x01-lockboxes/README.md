@@ -60,7 +60,7 @@ print(canUnlockAll(boxes))
 
 When executed, the above script (main_0.py) produces the following output:
 
-$ ./main_0.py
+```$ ./main_0.py
 True
 True
 False
