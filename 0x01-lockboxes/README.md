@@ -44,7 +44,7 @@ print(canUnlockAll(boxes))  # Output: False
 The functionality of canUnlockAll can also be demonstrated using 
 a separate Python script, for example, main_0.py:
 
-#!/usr/bin/python3
+```#!/usr/bin/python3
 
 canUnlockAll = __import__('0-lockboxes').canUnlockAll
 
@@ -56,6 +56,7 @@ print(canUnlockAll(boxes))
 
 boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
 print(canUnlockAll(boxes))
+```
 
 
 When executed, the above script (main_0.py) produces the following output:
@@ -64,4 +65,4 @@ When executed, the above script (main_0.py) produces the following output:
 True
 True
 False
-
+```
