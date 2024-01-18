@@ -6,13 +6,13 @@
 
 def minOperations(n):
     """
-    Method for compute the minimum number
-    of operations for task Copy All and Paste
+    Method for compute the minimum number of operations.
 
     Args:
         n: input value
-        factor_list: List to save the operations
-    Return: the sum of the operations
+        factor_list: list where operations is saved
+
+    Return: the sum of the operation made
     """
     if n < 2:
         return 0
@@ -24,4 +24,5 @@ def minOperations(n):
             while n % i == 0:
                 n /= i
                 factor_list.append(i)
+
     return sum(factor_list)
