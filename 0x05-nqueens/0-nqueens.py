@@ -5,60 +5,60 @@ Solution to the nqueens problem
 import sys
 
 
-def backtrack(r, n, cols, pos, neg, board):
+def solve(row, size, columns, positive, negative, grid):
     """
-    backtrack function to find solution
+    solve function to find solution
     """
-    if r == n:
-        res = []
-        for l in range(len(board)):
-            for k in range(len(board[l])):
-                if board[l][k] == 1:
-                    res.append([l, k])
-        print(res)
+    if row == size:
+        result = []
+        for i in range(len(grid)):
+            for j in range(len(grid[i])):
+                if grid[i][j] == 1:
+                    result.append([i, j])
+        print(result)
         return
 
-    for c in range(n):
-        if c in cols or (r + c) in pos or (r - c) in neg:
+    for col in range(size):
+        if col in columns or (row + col) in positive or (row - col) in negative:
             continue
 
-        cols.add(c)
-        pos.add(r + c)
-        neg.add(r - c)
-        board[r][c] = 1
+        columns.add(col)
+        positive.add(row + col)
+        negative.add(row - col)
+        grid[row][col] = 1
 
-        backtrack(r+1, n, cols, pos, neg, board)
+        solve(row+1, size, columns, positive, negative, grid)
 
-        cols.remove(c)
-        pos.remove(r + c)
-        neg.remove(r - c)
-        board[r][c] = 0
+        columns.remove(col)
+        positive.remove(row + col)
+        negative.remove(row - col)
+        grid[row][col] = 0
 
 
-def nqueens(n):
+def nqueens(size):
     """
     Solution to nqueens problem
     Args:
-        n (int): number of queens. Must be >= 4
+        size (int): number of queens. Must be >= 4
     Return:
         List of lists representing coordinates of each
         queen for all possible solutions
     """
-    cols = set()
-    pos_diag = set()
-    neg_diag = set()
-    board = [[0] * n for i in range(n)]
+    columns = set()
+    positive_diag = set()
+    negative_diag = set()
+    grid = [[0] * size for i in range(size)]
 
-    backtrack(0, n, cols, pos_diag, neg_diag, board)
+    solve(0, size, columns, positive_diag, negative_diag, grid)
 
 
 if __name__ == "__main__":
-    n = sys.argv
-    if len(n) != 2:
+    size = sys.argv
+    if len(size) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
     try:
-        nn = int(n[1])
+        nn = int(size[1])
         if nn < 4:
             print("N must be at least 4")
             sys.exit(1)
@@ -66,3 +66,4 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
+
