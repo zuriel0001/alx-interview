@@ -19,7 +19,9 @@ def solve(row, size, columns, positive, negative, grid):
         return
 
     for col in range(size):
-        if col in columns or (row + col) in positive or (row - col) in negative:
+        if (col in columns or
+            (row + col) in positive or
+            (row - col) in negative):
             continue
 
         columns.add(col)
@@ -37,7 +39,7 @@ def solve(row, size, columns, positive, negative, grid):
 
 def nqueens(size):
     """
-    Solution to nqueens problem
+    Method to solve to nqueens problem
     Args:
         size (int): number of queens. Must be >= 4
     Return:
@@ -66,4 +68,3 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-
