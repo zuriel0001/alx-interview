@@ -20,8 +20,8 @@ def solve(row, size, columns, positive, negative, grid):
 
     for col in range(size):
         if (col in columns or
-            (row + col) in positive or
-            (row - col) in negative):
+                (row + col) in positive or
+                (row - col) in negative):
             continue
 
         columns.add(col)
