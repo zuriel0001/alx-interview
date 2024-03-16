@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-Prime numbers, game theory, and algorithm 
-optimization to solve a competitive game scenario.
-"""
+"""Module defining isWinner function."""
+
 
 def isWinner(x, nums):
-    """method to get the winner in a prime game"""
+    """Function to get who has won in prime game"""
     mariaWinsCount = 0
     benWinsCount = 0
 
@@ -44,16 +42,13 @@ def isWinner(x, nums):
 
 
 def is_prime(n):
-    """
-    Returns True if n is prime
-    els: False
-    """
+    """Returns True if n is prime, else False."""
     if n < 2:
         return False
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             return False
-    return (True)
+    return True
 
 
 def primes_in_range(start, end):
