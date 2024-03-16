@@ -5,9 +5,10 @@ Script to performs prime game
 
 
 def isWinner(x, nums):
-    """Function that performs prime game"""
+    """Method to performs prime game"""
     if not nums or x < 1:
         return None
+
     n = max(nums)
     fltr = [True for _ in range(max(n + 1, 2))]
     for i in range(2, int(pow(n, 0.5)) + 1):
